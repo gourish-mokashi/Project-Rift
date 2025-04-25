@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://x7y83n06rn6e"]
+
+[ext_resource type="Script" uid="uid://ch6q362jiqfhy" path="res://Scripts_Mainmenu/studio_scene.gd" id="1_4n4db"]
+[ext_resource type="VideoStream" uid="uid://btaamp6diwvjh" path="res://CS1.ogv" id="2_a2mox"]
+
+[node name="StudioScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4n4db")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_a2mox")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
